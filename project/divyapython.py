@@ -32,7 +32,7 @@ while True:// it is infinite loop
 
     if(data.value == "ON"):
 
-       ser.write(b'1') //b-->byte // used to display on serial monitor on arduino ide
+       ser.write(b'1') //b-->byte // sending data to arduino ide
 
     elif(data.value == "OFF"):
 	
