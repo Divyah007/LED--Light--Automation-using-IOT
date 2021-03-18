@@ -1,0 +1,48 @@
+int led=13;//creating a variable named led
+
+
+void setup() 
+{
+  
+pinMode(led,OUTPUT); //function present in hardware class, it is used to specipy the pin number
+//sets the digital pin 13 as output
+
+ 
+Serial.begin(9600);//sets the baud rate for serial data communication
+//it is used to begin the serial communication at the rate of 9600 bits per second
+}
+
+
+void loop()
+{
+ 
+while(Serial.available()>0)//Serial.available()-->ardunio receving data
+{
+    
+String value=Serial.readString();// read the data
+  
+value.trim();//used to remove the garbage values
+  
+if(value=="1")
+{
+      
+digitalWrite(led,HIGH);// sets the digital pin 13 on
+
+Serial.println(value);// it prints the value in serial monitor
+     
+delay(1000);// waits for a second
+ 
+}
+  
+else if(value=="0")
+{
+      
+digitalWrite(led,LOW);
+  
+delay(1000);
+  
+}
+ 
+}
+ 
+}
